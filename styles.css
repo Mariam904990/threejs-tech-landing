@@ -1,0 +1,353 @@
+/* ================= ROOT ================= */
+:root {
+    --primary-blue: #00d4ff;
+    --primary-cyan: #00ffff;
+
+    --bg-primary: #020617;
+    --bg-secondary: #0f172a;
+
+    --card-bg: rgba(15, 23, 42, 0.85);
+    --border-color: rgba(0, 212, 255, 0.25);
+
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+
+    --input-bg: rgba(2, 6, 23, 0.6);
+    --input-border: #334155;
+}
+
+/* ================= LIGHT MODE ================= */
+.light {
+    --primary-blue: #2563eb;
+    --primary-cyan: #06b6d4;
+
+    --bg-primary: linear-gradient(180deg, #f8fafc, #eef2ff);
+    --bg-secondary: #ffffff;
+
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --border-color: rgba(37, 99, 235, 0.18);
+
+    --text-primary: #020617;
+    --text-secondary: #475569;
+
+    --input-bg: #ffffff;
+    --input-border: #c7d2fe;
+}
+
+/* ================= GLOBAL ================= */
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ================= NAVBAR ================= */
+nav {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.light nav {
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+nav a {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--text-primary);
+}
+.light nav a {
+    color: #475569;
+}
+
+.light nav a:hover {
+    color: #2563eb;
+}
+
+/* ================= HERO ================= */
+.hero-gradient {
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0,212,255,0.12),
+        transparent 70%
+    );
+}
+
+.light .hero-gradient {
+    background: radial-gradient(
+        ellipse at center,
+        rgba(37,99,235,0.15),
+        transparent 70%
+    );
+}
+
+/* ================= BUTTON ================= */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 28px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 15px 35px rgba(37,99,235,0.35);
+    transition: all 0.35s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px rgba(37,99,235,0.5);
+}
+
+/* ================= CARDS ================= */
+.card-hover {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    backdrop-filter: blur(14px);
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.08),
+        0 4px 10px rgba(0,0,0,0.04);
+    transition: all 0.35s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+}
+
+/* ================= PRODUCT CARD ================= */
+#products .card-hover {
+    overflow: hidden;
+}
+
+#products .card-hover > div:first-child {
+    background: linear-gradient(
+        135deg,
+        rgba(2,6,23,0.9),
+        rgba(15,23,42,0.9)
+    );
+}
+
+.light #products .card-hover > div:first-child {
+    background: linear-gradient(
+        135deg,
+        #e0e7ff,
+        #f8fafc
+    );
+}
+
+/* ================= FORM SECTION ================= */
+#contact {
+    padding: 120px 0;
+}
+
+#contact .form-wrapper {
+    max-width: 650px;
+    margin: auto;
+    padding: 48px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 26px;
+    backdrop-filter: blur(18px);
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.2);
+}
+
+.light #contact .form-wrapper {
+    box-shadow:
+        0 30px 70px rgba(243, 243, 243, 0.15);
+}
+
+#contact h2 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+#contact p {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+}
+
+/* ================= FORM ================= */
+form {
+    display: grid;
+    gap: 22px;
+}
+
+label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+textarea {
+    resize: none;
+    min-height: 140px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    background: rgba(255,255,255,0.08);
+    box-shadow:
+        0 0 0 3px rgba(37,99,235,0.25),
+        0 15px 35px rgba(0,0,0,0.25);
+}
+/* ================= LIGHT MODE FORM FIX ================= */
+.light #contact .form-wrapper {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(37, 99, 235, 0.18);
+    backdrop-filter: blur(12px);
+    box-shadow:
+        0 20px 50px rgba(37, 99, 235, 0.15),
+        0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Headings */
+.light #contact h2 {
+    color: #020617;
+}
+
+.light #contact p {
+    color: #475569;
+}
+
+/* Labels */
+.light label {
+    color: #475569;
+}
+
+/* Inputs */
+.light input,
+.light textarea {
+    background: #ffffff;
+    color: #020617;
+    border: 1px solid #c7d2fe;
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Placeholder */
+.light input::placeholder,
+.light textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* Focus */
+.light input:focus,
+.light textarea:focus {
+    background: #ffffff;
+    border-color: #2563eb;
+    box-shadow:
+        0 0 0 3px rgba(37,99,235,0.18),
+        0 10px 25px rgba(37,99,235,0.12);
+}
+
+/* ================= SECTION DIVIDER ================= */
+section {
+    position: relative;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0,212,255,0.25),
+        transparent
+    );
+}
+
+.light section::before {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(37,99,235,0.25),
+        transparent
+    );
+}
+
+/* ================= MODE TOGGLE ================= */
+.mode-toggle {
+    width: 60px;
+    height: 30px;
+    background: rgba(0,0,0,0.15);
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.mode-toggle-slider {
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.3s ease;
+}
+
+.dark .mode-toggle-slider {
+    transform: translateX(30px);
+}
+
+/* ================= SCROLLBAR ================= */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        135deg,
+        var(--primary-blue),
+        var(--primary-cyan)
+    );
+    border-radius: 6px;
+}
+
+/* ================= CANVAS ================= */
+#canvas-container {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
